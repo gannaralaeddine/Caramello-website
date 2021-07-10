@@ -89,7 +89,7 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html">Acceuil</a></li>
+                            <li><a href="{{ path('home') }}">Acceuil</a></li>
                             <li class="dropdown"><a href="{{ path('shop') }}">Boutique<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
@@ -99,8 +99,8 @@
                                     <li><a href="login.html">Login</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ path('contact') }}" class="active">Contactez-Nous</a></li>
-                            <li><a href="{{ path('contact') }}" class="active">Contactez-Nous</a></li>
+                            <li><a href="{{ path('contact') }}" >Contactez-Nous</a></li>
+                            <li><a href="{{ path('contact') }}" >Contactez-Nous</a></li>
                         </ul>
                     </div>
                 </div>
