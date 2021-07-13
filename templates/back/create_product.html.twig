@@ -1,0 +1,100 @@
+{% extends 'back/base.html.twig' %}
+
+{% block content %}
+
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="bordered-layout-card-center">Créer un nouveau produit</h4>
+                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collpase show">
+                    <div class="card-body">
+
+                        {{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    {{ form_label(form.titre, 'Titre', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.titre, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.categorie, 'Categorie', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.categorie, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.subCategorie, 'Sous categorie', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.subCategorie, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.description, 'Description', { 'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.description, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.qteStock, 'Quantité en stock', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.qteStock, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.prix, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    {{ form_label(form.tva, 'Montant de TVA', {'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                        {{ form_widget(form.tva, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row last">
+                                    {{ form_label(form.imageFile, null, { 'label': "L'image de produit", 'label_attr': {'class': 'col-md-3 label-control'} }) }}
+                                    <div class="col-md-9">
+                                         {{ form_widget(form.imageFile, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-actions center">
+
+                                {{ form_widget(form.cancel, {'label':'Annuler', 'attr':{'class':'btn btn-warning mr-1'}}) }}
+
+                                {{ form_widget(form.submit, {'attr':{'class':'btn btn-primary'}}) }}
+
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

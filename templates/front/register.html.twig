@@ -1,0 +1,68 @@
+{% extends 'front/base.html.twig' %}
+
+{% block content %}
+
+    <div class="content-body">
+        <section id="number-tabs">
+            <div class="row">
+                <div class="col-12">
+                    <div align="center" class="card">
+                        <div class="card-content collapse show">
+                            {{ form_start(registrationForm, {'attr':{'novalidate':'novalidate'}}) }}
+
+                            <br>
+                            <h1>Créer un Compte</h1>
+                            <br>
+                            <div class="form-group col-10 mb-2">
+                                <table class="form-wrap">
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.email, "E-Mail: ") }} </td>
+                                        <td>{{ form_widget(registrationForm.email, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.nom, "Nom: ") }}</td>
+                                        <td>{{ form_widget(registrationForm.nom, {'attr': {'style': 'width: 300px'} + {'class':'form-control'} } )  }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.prenom, "Prénom: ") }} </td>
+                                        <td>{{ form_widget(registrationForm.prenom, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.sexe, "Sexe: ") }}</td>
+                                        <td> {{ form_widget(registrationForm.sexe, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.dateNaiss, "Date de naissance: ") }}</td>
+                                        <td>{{ form_widget(registrationForm.dateNaiss) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.tel, "Numéro de téléphone: ") }}</td>
+                                        <td>{{ form_widget(registrationForm.tel, {'attr': {'style': 'width: 300px'} + {'class':'form-control'} } )  }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.ville, "Ville: ") }} </td>
+                                        <td>{{ form_widget(registrationForm.ville, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.adresse, "Adresse: ") }} </td>
+                                        <td>{{ form_widget(registrationForm.adresse, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ form_label(registrationForm.plainPassword, "Mot de passe: ") }} </td>
+                                        <td>{{ form_widget(registrationForm.plainPassword, {'attr': {'style': 'width: 300px'} + {'class':'form-control'}}) }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            {{ form_widget(registrationForm.submit, {'attr':{'class':'btn btn-primary'}}) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_rest(registrationForm) }}
+        </section>
+    </div>
+
+    <br>
+{% endblock %}

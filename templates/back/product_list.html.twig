@@ -1,0 +1,73 @@
+{% extends 'back/base.html.twig' %}
+
+{% block content %}
+
+    <br>
+    <h1 align="center">Liste des produits</h1>
+    <br>
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+
+            <div class="content-body"><!-- Basic Tables start -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-content collapse show">
+
+                                <div class="table-responsive">
+                                    <br>
+                                    <br>
+                                    <div class="col-11 mb-2">
+                                        {% if  produits %}
+                                            <table border="1" cellpadding="50" align="center" class="table">
+                                                <thead class="bg-primary white">
+                                                <tr>
+                                                    <th>Titre</th>
+                                                    <th>Categorie</th>
+                                                    <th>Sous Categorie</th>
+                                                    <th>Description</th>
+                                                    <th>Quantité en stock</th>
+                                                    <th>Prix</th>
+                                                    <th>Montant de TVA</th>
+                                                    <th colspan="4" style="text-align: center">Gestion</th>
+                                                </tr>
+                                                </thead>
+                                                <tr {% for p in produits %}>
+                                                    <td>{{ p.titre }}</td>
+                                                    <td>{{ p.categorie }}</td>
+                                                    <td>{{ p.subCategorie }}</td>
+                                                    <td>{{ p.description }}</td>
+                                                    <td>{{ p.qteStock }}</td>
+                                                    <td>{{ p.prix }}</td>
+                                                    <td>{{ p.tva }}</td>
+                                                    <td><div class="btn-group"> <a href="{{ path('admin_EditProduct', {'id':p.id}) }}" ><button type="button" class="btn btn-warning">Modifier</button></a></div></td>
+                                                    <td><div class="btn-group"> <a href="{{ path('admin_DeleteProduct', {'id':p.id}) }}" ><button type="button" class="btn btn-danger">Supprimer</button></a></div></td>
+                                                </tr {% endfor %}>
+                                            </table>
+                                        {% else %}
+                                            <div style="text-align: center">La liste des produits est vide</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
